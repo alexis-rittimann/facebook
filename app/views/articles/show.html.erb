@@ -1,0 +1,10 @@
+<h1>GOSSIP girl</h1>
+
+<%= @article.title %> <br>
+<%= @article.content %> <br>
+<br><br>
+<%= @article.user.email%>
+<br>
+<br>
+<%= @article.created_at %> <br>
+<%= link_to user_path(@article.user.id), class:"btn btn-primary" do %>profil de l'utilisateur<% end %>

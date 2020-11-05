@@ -1,0 +1,23 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+<h1>site de gossip</h1>
+  <p>Bienvenue dans la liste des potins</p>
+<h4><%= link_to "nouveau", new_article_path %></h4>
+
+  <div class="card-columns">
+    <% @articles.each do |t| %>
+
+      <div  class="card text-white bg-secondary mb-3 " style="max-width: 20rem;">
+        <div class="card-header"><%= t.user.email %><br/></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= t.title %><br/></h5>
+          <p class="btn btn-warning"><%= link_to "Détails", "/articles/#{t.id}" %></p>
+
+        </div>
+      </div>
+
+    <% end %>
+  </div>
